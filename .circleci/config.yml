@@ -2,10 +2,9 @@ version: 2
 jobs:
   build:
     docker:
-      - image: debian:stretch
+      - image: docker
     steps:
       - checkout
-      - setup_remote_docker
       - run: |
           docker build -t test-nginx .
       - run:
