@@ -4,6 +4,6 @@ services:
   - docker
 
 script:
-  - curl -fsSL https://goss.rocks/install | sh
+  - sudo curl -fsSL https://goss.rocks/install | sh
   - docker build -t nginx_test .
   - pgoss run -p 8080:80 nginx_test
