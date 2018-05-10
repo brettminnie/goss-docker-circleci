@@ -6,9 +6,8 @@ jobs:
     steps:
       - checkout
       - setup_remote_docker
-      - run:
-          name: Build Image
-          command: docker build -t test-nginx .
+      - run: |
+          docker build -t test-nginx .
       - run:
           name: Run tests
           command: dgoss run -p 8080:80 test-nginx
