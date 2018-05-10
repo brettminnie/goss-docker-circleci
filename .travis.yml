@@ -1,0 +1,8 @@
+sudo: required
+
+services:
+  - docker
+
+script:
+  - docker build -t nginx_test .
+  - pgoss run -p 8080:80 nginx_test
