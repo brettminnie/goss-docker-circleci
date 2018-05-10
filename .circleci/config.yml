@@ -1,0 +1,15 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: debian:stretch
+    steps:
+      - checkout
+      - run:
+          name: Build Image
+          command: docker build -t test-nginx .
+      - run:
+          name: Run tests
+          command: dgoss run -p 8080:80 test-nginx
+
+
