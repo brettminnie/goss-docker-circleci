@@ -3,6 +3,9 @@ sudo: required
 services:
   - docker
 
+before_install:
+  - curl -fsSL https://goss.rocks/install | sh
+
 script:
   - docker build -t nginx_test .
   - pgoss run -p 8080:80 nginx_test
