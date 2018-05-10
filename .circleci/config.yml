@@ -5,6 +5,7 @@ jobs:
       - image: debian:stretch
     steps:
       - checkout
+      - setup_remote_docker
       - run:
           name: Build Image
           command: docker build -t test-nginx .
